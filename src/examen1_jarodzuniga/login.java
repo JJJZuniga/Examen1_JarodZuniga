@@ -5,7 +5,9 @@
  */
 package examen1_jarodzuniga;
 
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,7 +57,6 @@ public class login extends javax.swing.JFrame {
         tx_naci = new javax.swing.JTextField();
         tx_cuenta = new javax.swing.JTextField();
         tx_user = new javax.swing.JTextField();
-        tx_cpass = new javax.swing.JTextField();
         tx_lisclas = new javax.swing.JTextField();
         tx_gana = new javax.swing.JTextField();
         cb_tipo = new javax.swing.JComboBox<>();
@@ -63,6 +64,7 @@ public class login extends javax.swing.JFrame {
         tx_nivel = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        ps_pass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -142,6 +144,11 @@ public class login extends javax.swing.JFrame {
         tx_nivel.setEditable(false);
 
         jButton1.setText("Guardar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Limpiar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,11 +179,11 @@ public class login extends javax.swing.JFrame {
                             .addComponent(tx_naci)
                             .addComponent(tx_cuenta)
                             .addComponent(tx_user)
-                            .addComponent(tx_cpass)
                             .addComponent(tx_lisclas)
                             .addComponent(tx_gana)
                             .addComponent(cb_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tx_tuto)))
+                            .addComponent(tx_tuto)
+                            .addComponent(ps_pass)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -193,14 +200,11 @@ public class login extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(tx_carre)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addGap(196, 196, 196)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(58, 58, 58))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(20, 20, 20))))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +220,7 @@ public class login extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(tx_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(7, 7, 7)
                         .addComponent(jButton1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -237,7 +241,7 @@ public class login extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(tx_cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ps_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -259,7 +263,7 @@ public class login extends javax.swing.JFrame {
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addGap(34, 34, 34)))
+                        .addGap(37, 37, 37)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(tx_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -315,7 +319,11 @@ public class login extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(59, 59, 59)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(cb_tip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(tx_useracc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -323,11 +331,7 @@ public class login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(ps_ingpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(cb_tip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
@@ -454,13 +458,33 @@ public class login extends javax.swing.JFrame {
         tx_naci.setText("");
         tx_cuenta.setText("");
         tx_user.setText("");
-        tx_cpass.setText("");
+        ps_pass.setText("");
         cb_tipo.setSelectedItem(evt);
         tx_lisclas.setText("");
         tx_gana.setText("");
         tx_tuto.setText("");
         tx_nivel.setText("");
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+       int edad;
+       edad=Integer.parseInt(tx_edad.getText());
+        if (cb_tipo.getSelectedItem()=="Tutor") {
+            if (tutor.isEmpty()) {
+              tutor.add(new tutores(tx_lisclas.getText(),Integer.parseInt(tx_gana.getText()),Integer.parseInt(tx_nivel.getText()),tx_nombre.getText(),tx_edad.getText(), tx_carre.getText(),tx_naci.getText(),tx_cuenta.getText(),tx_user.getText(), ps_pass.getText()));
+                JOptionPane.showMessageDialog(this, "Usuario creado exitosamente");
+            }else{
+                for (int i = 0; i < tutor.size(); i++) {
+                    if (tutor.contains(tx_user)) {
+                        JOptionPane.showMessageDialog(this, "Nombre de usuario ya es existente");
+                        break;
+                    }
+                }
+            }
+        }else {
+            estudiante.add(new cuentas(tx_nombre.getText(),tx_edad.getText(), tx_carre.getText(),tx_naci.getText(),tx_cuenta.getText(),tx_user.getText(), ps_pass.getText()));
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -531,9 +555,9 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPasswordField ps_ingpass;
+    private javax.swing.JPasswordField ps_pass;
     private javax.swing.JTextField tx_carre;
     private javax.swing.JTextField tx_conoc;
-    private javax.swing.JTextField tx_cpass;
     private javax.swing.JTextField tx_cuenta;
     private javax.swing.JTextField tx_edad;
     private javax.swing.JTextField tx_gana;
@@ -548,4 +572,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextField tx_user;
     private javax.swing.JTextField tx_useracc;
     // End of variables declaration//GEN-END:variables
+    ArrayList estudiante=new ArrayList();
+    ArrayList tutor=new ArrayList();
+    
 }
