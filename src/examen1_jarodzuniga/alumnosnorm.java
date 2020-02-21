@@ -16,7 +16,7 @@ public class alumnosnorm extends alumnos{
     private int nivapre;
     private ArrayList<examanes> ex=new ArrayList();
 
-    public alumnosnorm(int conoc, int nivapre, String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
+    public alumnosnorm(int conoc, int nivapre,ArrayList ex, String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
         super(nombre, edad, carrera, lugar_nac, num_cuen, usuario, pass);
         this.conoc = conoc;
         this.nivapre = nivapre;
