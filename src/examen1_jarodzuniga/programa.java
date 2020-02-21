@@ -20,9 +20,6 @@ public class programa extends javax.swing.JFrame {
     public programa() {
         initComponents();
 
-        jTabbedPane1.setEnabledAt(1, false);
-        jTabbedPane1.setEnabledAt(2, false);
-        jTabbedPane1.setEnabledAt(3, false);
     }
 
     /**
@@ -186,6 +183,5 @@ public class programa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
-    ArrayList<String> username = new ArrayList();
-    ArrayList<String> pass = new ArrayList();
+    
 }
