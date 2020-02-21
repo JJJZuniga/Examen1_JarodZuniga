@@ -20,12 +20,12 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-       
+
         tx_lisclas.setEnabled(false);
         tx_gana.setEnabled(false);
         tx_nivel.setEnabled(false);
         tx_tuto.setEnabled(false);
-       
+
     }
 
     /**
@@ -350,6 +350,11 @@ public class login extends javax.swing.JFrame {
         jLabel21.setText("Puntaje");
 
         bt_crearexa.setText("Crear Examen");
+        bt_crearexa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_crearexaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -425,26 +430,26 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cb_tipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_tipoItemStateChanged
-        if (cb_tipo.getSelectedItem()=="Tutor") {
+        if (cb_tipo.getSelectedItem() == "Tutor") {
             System.out.println("funciona");
-           tx_lisclas.setEnabled(true);
-        tx_gana.setEnabled(true);
-        tx_nivel.setEnabled(true);
-        tx_tuto.setEnabled(true);
-        }else{
-             tx_lisclas.setEnabled(false);
-        tx_gana.setEnabled(false);
-        tx_nivel.setEnabled(false);
-        tx_tuto.setEnabled(false);
+            tx_lisclas.setEnabled(true);
+            tx_gana.setEnabled(true);
+            tx_nivel.setEnabled(true);
+            tx_tuto.setEnabled(true);
+        } else {
+            tx_lisclas.setEnabled(false);
+            tx_gana.setEnabled(false);
+            tx_nivel.setEnabled(false);
+            tx_tuto.setEnabled(false);
         }
     }//GEN-LAST:event_cb_tipoItemStateChanged
 
     private void cb_tipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cb_tipoKeyPressed
-        
+
     }//GEN-LAST:event_cb_tipoKeyPressed
 
     private void cb_tipoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_tipoMouseEntered
-        
+
     }//GEN-LAST:event_cb_tipoMouseEntered
 
     private void tx_edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_edadActionPerformed
@@ -467,24 +472,40 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-       int edad;
-       edad=Integer.parseInt(tx_edad.getText());
-        if (cb_tipo.getSelectedItem()=="Tutor") {
+        int edad;
+        edad = Integer.parseInt(tx_edad.getText());
+        if (cb_tipo.getSelectedItem() == "Tutor") {
             if (tutor.isEmpty()) {
-              tutor.add(new tutores(tx_lisclas.getText(),Integer.parseInt(tx_gana.getText()),Integer.parseInt(tx_nivel.getText()),tx_nombre.getText(),tx_edad.getText(), tx_carre.getText(),tx_naci.getText(),tx_cuenta.getText(),tx_user.getText(), ps_pass.getText()));
+                tutor.add(new tutores(tx_lisclas.getText(), Integer.parseInt(tx_gana.getText()), Integer.parseInt(tx_nivel.getText()), tx_nombre.getText(), tx_edad.getText(), tx_carre.getText(), tx_naci.getText(), tx_cuenta.getText(), tx_user.getText(), ps_pass.getText()));
                 JOptionPane.showMessageDialog(this, "Usuario creado exitosamente");
-            }else{
+            } else {
                 for (int i = 0; i < tutor.size(); i++) {
-                    if (tutor.contains(tx_user)) {
+                    if (tutor.contains(tx_user.getText())) {
                         JOptionPane.showMessageDialog(this, "Nombre de usuario ya es existente");
+                        break;
+                    } else {
+                        tutor.add(new tutores(tx_lisclas.getText(), Integer.parseInt(tx_gana.getText()), Integer.parseInt(tx_nivel.getText()), tx_nombre.getText(), tx_edad.getText(), tx_carre.getText(), tx_naci.getText(), tx_cuenta.getText(), tx_user.getText(), ps_pass.getText()));
+
                         break;
                     }
                 }
             }
-        }else {
-            estudiante.add(new cuentas(tx_nombre.getText(),tx_edad.getText(), tx_carre.getText(),tx_naci.getText(),tx_cuenta.getText(),tx_user.getText(), ps_pass.getText()));
+        } else {
+            for (int i = 0; i < tutor.size(); i++) {
+                if (estudiante.contains(tx_user.getText())) {
+                    JOptionPane.showMessageDialog(this, "Nombre de usuario ya es existente");
+                    break;
+                } else {
+                    estudiante.add(new alumnosnorm(0,0,tx_nombre.getText(), tx_edad.getText(), tx_carre.getText(), tx_naci.getText(), tx_cuenta.getText(), tx_user.getText(), ps_pass.getText()));
+                    break;
+                }
+            }
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void bt_crearexaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_crearexaMouseClicked
+        exa.add(new examanes(tx_nacla.getText(),Integer.parseInt(tx_conoc.getT)))
+    }//GEN-LAST:event_bt_crearexaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -572,7 +593,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextField tx_user;
     private javax.swing.JTextField tx_useracc;
     // End of variables declaration//GEN-END:variables
-    ArrayList estudiante=new ArrayList();
-    ArrayList tutor=new ArrayList();
-    
+    ArrayList estudiante = new ArrayList();
+    ArrayList tutor = new ArrayList();
+    ArrayList exa = new ArrayList();
+
 }

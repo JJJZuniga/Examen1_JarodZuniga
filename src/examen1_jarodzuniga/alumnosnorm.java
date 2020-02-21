@@ -11,49 +11,39 @@ import java.util.ArrayList;
  *
  * @author Rosa
  */
-public class tutores extends alumnos{
-    private String clases;
-    private int ganancia;
-    private ArrayList tutodad=new ArrayList();
-    private int nivelens;
+public class alumnosnorm extends alumnos{
+    private int conoc;
+    private int nivapre;
+    private ArrayList<examanes> ex=new ArrayList();
 
-    public tutores(String clases, int ganancia, int nivelens, String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
+    public alumnosnorm(int conoc, int nivapre, String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
         super(nombre, edad, carrera, lugar_nac, num_cuen, usuario, pass);
-        this.clases = clases;
-        this.ganancia = ganancia;
-        this.nivelens = nivelens;
+        this.conoc = conoc;
+        this.nivapre = nivapre;
     }
 
-    public String getClases() {
-        return clases;
+    public int getConoc() {
+        return conoc;
     }
 
-    public void setClases(String clases) {
-        this.clases = clases;
+    public void setConoc(int conoc) {
+        this.conoc = conoc;
     }
 
-    public int getGanancia() {
-        return ganancia;
+    public int getNivapre() {
+        return nivapre;
     }
 
-    public void setGanancia(int ganancia) {
-        this.ganancia = ganancia;
+    public void setNivapre(int nivapre) {
+        this.nivapre = nivapre;
     }
 
-    public ArrayList getTutodad() {
-        return tutodad;
+    public ArrayList<examanes> getEx() {
+        return ex;
     }
 
-    public void setTutodad(ArrayList tutodad) {
-        this.tutodad = tutodad;
-    }
-
-    public int getNivelens() {
-        return nivelens;
-    }
-
-    public void setNivelens(int nivelens) {
-        this.nivelens = nivelens;
+    public void setEx(ArrayList<examanes> ex) {
+        this.ex = ex;
     }
 
     public String getNombre() {
@@ -114,8 +104,7 @@ public class tutores extends alumnos{
 
     @Override
     public String toString() {
-        return "tutores" + "clases=" + clases + ", ganancia=" + ganancia + ", tutodad=" + tutodad + ", nivelens=" + nivelens;
+        return "alumnosnorm{" + "conoc=" + conoc + ", nivapre=" + nivapre + ", ex=" + ex + '}';
     }
-    
     
 }

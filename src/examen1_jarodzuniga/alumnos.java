@@ -9,7 +9,7 @@ package examen1_jarodzuniga;
  *
  * @author Rosa
  */
-public class cuentas {
+public class alumnos {
     protected String nombre;
     protected String edad;
     protected String carrera;
@@ -18,7 +18,7 @@ public class cuentas {
     protected String usuario;
     protected String pass;
 
-    public cuentas(String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
+    public alumnos(String nombre, String edad, String carrera, String lugar_nac, String num_cuen, String usuario, String pass) {
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
