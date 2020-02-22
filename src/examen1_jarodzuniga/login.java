@@ -6,14 +6,18 @@
 package examen1_jarodzuniga;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Rosa
  */
 public class login extends javax.swing.JFrame {
+
+    DefaultTableModel modelo = new DefaultTableModel();
 
     /**
      * Creates new form loguin
@@ -49,7 +53,8 @@ public class login extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_modi = new javax.swing.JTable();
+        bt_actualizar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -215,7 +220,13 @@ public class login extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel23.setText("Estudiante Normal");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel8.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jPanel8PropertyChange(evt);
+            }
+        });
+
+        tb_modi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -223,7 +234,14 @@ public class login extends javax.swing.JFrame {
                 "Nombre", "Edad", "Carrera", "Lugar de nacimiento", "Numero de cuenta", "Usuario", "Contraseña"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tb_modi);
+
+        bt_actualizar.setText("Actualizar");
+        bt_actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_actualizarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -231,15 +249,21 @@ public class login extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(343, 343, 343))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(73, 73, 73)
+                .addComponent(bt_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Modificar datos", jPanel8);
@@ -263,7 +287,7 @@ public class login extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -295,7 +319,7 @@ public class login extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
@@ -327,7 +351,7 @@ public class login extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -403,7 +427,7 @@ public class login extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(227, 227, 227)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,7 +496,7 @@ public class login extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(243, 243, 243)
@@ -946,9 +970,9 @@ public class login extends javax.swing.JFrame {
                 estudiante.add(new alumnosnorm(0, 0, exa, tx_nombre.getText(), tx_edad.getText(), tx_carre.getText(), tx_naci.getText(), tx_cuenta.getText(), tx_user.getText(), ps_pass.getText()));
                 JOptionPane.showMessageDialog(this, "Usuario creado exitosamente");
             } else {
-                
+
                 for (int i = 0; i < estudiante.size(); i++) {
-                    if ( ((alumnosnorm)(estudiante.get(i))).getUsuario().contains(tx_user.getText()) ) {
+                    if (((alumnosnorm) (estudiante.get(i))).getUsuario().contains(tx_user.getText())) {
                         JOptionPane.showMessageDialog(this, "Nombre de usuario ya es existente");
                         break;
                     } else {
@@ -969,29 +993,50 @@ public class login extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         if (cb_tip.getSelectedItem() == "Tutor") {
             for (int i = 0; i < tutor.size(); i++) {
-                if (((tutores)(tutor.get(i))).getUsuario().equals(tx_useracc.getText())) {
-                    if (((tutores)(tutor.get(i))).getPass().equals(ps_ingpass.getText())) {
-                        JOptionPane.showMessageDialog(this, "Bienvenido "+ tx_useracc.getText());
+                if (((tutores) (tutor.get(i))).getUsuario().equals(tx_useracc.getText())) {
+                    if (((tutores) (tutor.get(i))).getPass().equals(ps_ingpass.getText())) {
+                        JOptionPane.showMessageDialog(this, "Bienvenido " + tx_useracc.getText());
                         tuttor.setVisible(true);
                     }
                 }
             }
-        }else{
-            for (int i = 0; i <estudiante.size(); i++) {
-                if (((alumnosnorm)(estudiante.get(i))).getUsuario().equals(tx_useracc.getText())) {
-                    if (((alumnosnorm)(estudiante.get(i))).getPass().equals(ps_ingpass.getText())) {
-                        JOptionPane.showMessageDialog(this, "Bienvenido "+tx_useracc.getText() );
+        } else {
+            for (int i = 0; i < estudiante.size(); i++) {
+                if (((alumnosnorm) (estudiante.get(i))).getUsuario().equals(tx_useracc.getText())) {
+                    if (((alumnosnorm) (estudiante.get(i))).getPass().equals(ps_ingpass.getText())) {
+                        JOptionPane.showMessageDialog(this, "Bienvenido " + tx_useracc.getText());
                         estudiantee.setVisible(true);
                     }
                 }
             }
         }
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-       JOptionPane.showMessageDialog(this, "hasta la proxima" );
+        JOptionPane.showMessageDialog(this, "hasta la proxima");
         estudiantee.setVisible(false);
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jPanel8PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jPanel8PropertyChange
+
+    }//GEN-LAST:event_jPanel8PropertyChange
+
+    private void bt_actualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_actualizarMouseClicked
+
+        Object O[] = null;
+        for (int i = 0; i <  estudiante.size(); i++) {
+            modelo.addRow(O);
+            alumnosnorm P = (alumnosnorm) estudiante.get(i);
+            modelo.setValueAt(P.getNombre(), i, 0);
+            modelo.setValueAt(P.getEdad(), i, 1);
+            modelo.setValueAt(P.getCarrera(), i, 2);
+            modelo.setValueAt(P.getLugar_nac(), i, 3);
+            modelo.setValueAt(P.getNum_cuen(), i, 4);
+            modelo.setValueAt(P.getUsuario(), i, 5);
+            modelo.setValueAt(P.getPass(), i, 6);
+        }
+    }//GEN-LAST:event_bt_actualizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1030,6 +1075,7 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_actualizar;
     private javax.swing.JButton bt_crearexa;
     private javax.swing.JComboBox<String> cb_tip;
     private javax.swing.JComboBox<String> cb_tipo;
@@ -1097,7 +1143,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -1110,6 +1155,7 @@ public class login extends javax.swing.JFrame {
     private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JPasswordField ps_ingpass;
     private javax.swing.JPasswordField ps_pass;
+    private javax.swing.JTable tb_modi;
     private javax.swing.JDialog tuttor;
     private javax.swing.JTextField tx_carre;
     private javax.swing.JTextField tx_conoc;
