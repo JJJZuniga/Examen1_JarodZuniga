@@ -195,7 +195,7 @@ public class login extends javax.swing.JFrame {
             tuttorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tuttorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2)
                 .addContainerGap())
             .addGroup(tuttorLayout.createSequentialGroup()
                 .addGap(285, 285, 285)
@@ -208,7 +208,7 @@ public class login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel22)
                 .addGap(30, 30, 30)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2)
                 .addContainerGap())
         );
 
@@ -217,13 +217,10 @@ public class login extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Edad", "Carrera", "Lugar de nacimiento", "Numero de cuenta", "Usuario", "Contraseña"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -496,6 +493,11 @@ public class login extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton6.setText("Log out");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -969,7 +971,7 @@ public class login extends javax.swing.JFrame {
             for (int i = 0; i < tutor.size(); i++) {
                 if (((tutores)(tutor.get(i))).getUsuario().equals(tx_useracc.getText())) {
                     if (((tutores)(tutor.get(i))).getPass().equals(ps_ingpass.getText())) {
-                        JOptionPane.showMessageDialog(this, "Bienvenido "+ ((tutores)(tutor.get(i))).getUsuario());
+                        JOptionPane.showMessageDialog(this, "Bienvenido "+ tx_useracc.getText());
                         tuttor.setVisible(true);
                     }
                 }
@@ -985,6 +987,11 @@ public class login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+       JOptionPane.showMessageDialog(this, "hasta la proxima" );
+        estudiantee.setVisible(false);
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
