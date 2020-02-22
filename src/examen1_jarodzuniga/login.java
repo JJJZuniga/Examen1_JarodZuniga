@@ -44,7 +44,13 @@ public class login extends javax.swing.JFrame {
         tuttor = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tb_modit = new javax.swing.JTable();
+        bt_ac = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tb_modit1 = new javax.swing.JTable();
+        bt_ac1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
@@ -143,28 +149,88 @@ public class login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         ps_pass = new javax.swing.JPasswordField();
 
+        tb_modit.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar de nacimiento", "Numero de cuenta", "Usuario", "Contraseña"
+            }
+        ));
+        jScrollPane7.setViewportView(tb_modit);
+
+        bt_ac.setText("Actualizar");
+        bt_ac.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_acMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(bt_ac, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 446, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(bt_ac, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         jTabbedPane2.addTab("Modificar datos", jPanel4);
+
+        tb_modit1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar de nacimiento", "Numero de cuenta", "Usuario", "Contraseña"
+            }
+        ));
+        jScrollPane8.setViewportView(tb_modit1);
+
+        bt_ac1.setText("Actualizar");
+        bt_ac1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_ac1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(242, 242, 242)
+                        .addComponent(bt_ac1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 446, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(bt_ac1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         jTabbedPane2.addTab("Listar datos", jPanel5);
@@ -177,7 +243,7 @@ public class login extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 446, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Dar tutoria", jPanel6);
@@ -203,7 +269,7 @@ public class login extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Log out", jPanel7);
@@ -1127,6 +1193,26 @@ public class login extends javax.swing.JFrame {
         tuttor.setVisible(false);
     }//GEN-LAST:event_jButton7MouseClicked
 
+    private void bt_acMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_acMouseClicked
+        for (tutores object : tutor) {
+            tutores s = (tutores) object;
+            Object[] newrow = {s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar_nac(), s.getNum_cuen(), s.getUsuario(), s.getPass()};
+            DefaultTableModel modelo = (DefaultTableModel) tb_modit.getModel();
+            modelo.addRow(newrow);
+            tb_modit.setModel(modelo);
+        }
+    }//GEN-LAST:event_bt_acMouseClicked
+
+    private void bt_ac1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ac1MouseClicked
+        for (tutores object : tutor) {
+            tutores s = (tutores) object;
+            Object[] newrow = {s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar_nac(), s.getNum_cuen(), s.getUsuario(), s.getPass()};
+            DefaultTableModel modelo = (DefaultTableModel) tb_modit1.getModel();
+            modelo.addRow(newrow);
+            tb_modit1.setModel(modelo);
+        }
+    }//GEN-LAST:event_bt_ac1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1164,6 +1250,8 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_ac;
+    private javax.swing.JButton bt_ac1;
     private javax.swing.JButton bt_actex;
     private javax.swing.JButton bt_actuali;
     private javax.swing.JButton bt_actualizar;
@@ -1172,16 +1260,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_dia;
     private javax.swing.JComboBox<String> cb_tip;
     private javax.swing.JComboBox<String> cb_tipo;
-    private javax.swing.JComboBox<String> cb_tipo1;
-    private javax.swing.JComboBox<String> cb_tipo10;
-    private javax.swing.JComboBox<String> cb_tipo2;
-    private javax.swing.JComboBox<String> cb_tipo3;
-    private javax.swing.JComboBox<String> cb_tipo4;
-    private javax.swing.JComboBox<String> cb_tipo5;
-    private javax.swing.JComboBox<String> cb_tipo6;
-    private javax.swing.JComboBox<String> cb_tipo7;
-    private javax.swing.JComboBox<String> cb_tipo8;
-    private javax.swing.JComboBox<String> cb_tipo9;
     private javax.swing.JDialog estudiantee;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1192,64 +1270,11 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
-    private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel110;
-    private javax.swing.JLabel jLabel111;
-    private javax.swing.JLabel jLabel112;
-    private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
-    private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
-    private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
-    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
-    private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
-    private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
-    private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
-    private javax.swing.JLabel jLabel143;
-    private javax.swing.JLabel jLabel144;
-    private javax.swing.JLabel jLabel145;
-    private javax.swing.JLabel jLabel146;
-    private javax.swing.JLabel jLabel147;
-    private javax.swing.JLabel jLabel148;
-    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel150;
-    private javax.swing.JLabel jLabel151;
-    private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1269,96 +1294,19 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1371,149 +1319,43 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable5;
     private javax.swing.JPasswordField ps_ingpass;
     private javax.swing.JPasswordField ps_pass;
-    private javax.swing.JPasswordField ps_pass1;
-    private javax.swing.JPasswordField ps_pass10;
-    private javax.swing.JPasswordField ps_pass2;
-    private javax.swing.JPasswordField ps_pass3;
-    private javax.swing.JPasswordField ps_pass4;
-    private javax.swing.JPasswordField ps_pass5;
-    private javax.swing.JPasswordField ps_pass6;
-    private javax.swing.JPasswordField ps_pass7;
-    private javax.swing.JPasswordField ps_pass8;
-    private javax.swing.JPasswordField ps_pass9;
     private javax.swing.JTable tb_lis;
     private javax.swing.JTable tb_listo;
     private javax.swing.JTable tb_modi;
+    private javax.swing.JTable tb_modit;
+    private javax.swing.JTable tb_modit1;
     private javax.swing.JTable tb_pen;
     private javax.swing.JDialog tuttor;
     private javax.swing.JTextField tx_alumno;
     private javax.swing.JTextField tx_anno;
     private javax.swing.JTextField tx_aula;
     private javax.swing.JTextField tx_carre;
-    private javax.swing.JTextField tx_carre1;
-    private javax.swing.JTextField tx_carre10;
-    private javax.swing.JTextField tx_carre2;
-    private javax.swing.JTextField tx_carre3;
-    private javax.swing.JTextField tx_carre4;
-    private javax.swing.JTextField tx_carre5;
-    private javax.swing.JTextField tx_carre6;
-    private javax.swing.JTextField tx_carre7;
-    private javax.swing.JTextField tx_carre8;
-    private javax.swing.JTextField tx_carre9;
     private javax.swing.JTextField tx_clase;
     private javax.swing.JTextField tx_conoc;
     private javax.swing.JTextField tx_cuenta;
-    private javax.swing.JTextField tx_cuenta1;
-    private javax.swing.JTextField tx_cuenta10;
-    private javax.swing.JTextField tx_cuenta2;
-    private javax.swing.JTextField tx_cuenta3;
-    private javax.swing.JTextField tx_cuenta4;
-    private javax.swing.JTextField tx_cuenta5;
-    private javax.swing.JTextField tx_cuenta6;
-    private javax.swing.JTextField tx_cuenta7;
-    private javax.swing.JTextField tx_cuenta8;
-    private javax.swing.JTextField tx_cuenta9;
     private javax.swing.JTextField tx_edad;
-    private javax.swing.JTextField tx_edad1;
-    private javax.swing.JTextField tx_edad10;
-    private javax.swing.JTextField tx_edad2;
-    private javax.swing.JTextField tx_edad3;
-    private javax.swing.JTextField tx_edad4;
-    private javax.swing.JTextField tx_edad5;
-    private javax.swing.JTextField tx_edad6;
-    private javax.swing.JTextField tx_edad7;
-    private javax.swing.JTextField tx_edad8;
-    private javax.swing.JTextField tx_edad9;
     private javax.swing.JTextField tx_gana;
-    private javax.swing.JTextField tx_gana1;
-    private javax.swing.JTextField tx_gana10;
-    private javax.swing.JTextField tx_gana2;
-    private javax.swing.JTextField tx_gana3;
-    private javax.swing.JTextField tx_gana4;
-    private javax.swing.JTextField tx_gana5;
-    private javax.swing.JTextField tx_gana6;
-    private javax.swing.JTextField tx_gana7;
-    private javax.swing.JTextField tx_gana8;
-    private javax.swing.JTextField tx_gana9;
     private javax.swing.JTextField tx_hora;
     private javax.swing.JTextField tx_lisclas;
-    private javax.swing.JTextField tx_lisclas1;
-    private javax.swing.JTextField tx_lisclas10;
-    private javax.swing.JTextField tx_lisclas2;
-    private javax.swing.JTextField tx_lisclas3;
-    private javax.swing.JTextField tx_lisclas4;
-    private javax.swing.JTextField tx_lisclas5;
-    private javax.swing.JTextField tx_lisclas6;
-    private javax.swing.JTextField tx_lisclas7;
-    private javax.swing.JTextField tx_lisclas8;
-    private javax.swing.JTextField tx_lisclas9;
     private javax.swing.JTextField tx_mes;
     private javax.swing.JTextField tx_naci;
-    private javax.swing.JTextField tx_naci1;
-    private javax.swing.JTextField tx_naci10;
-    private javax.swing.JTextField tx_naci2;
-    private javax.swing.JTextField tx_naci3;
-    private javax.swing.JTextField tx_naci4;
-    private javax.swing.JTextField tx_naci5;
-    private javax.swing.JTextField tx_naci6;
-    private javax.swing.JTextField tx_naci7;
-    private javax.swing.JTextField tx_naci8;
-    private javax.swing.JTextField tx_naci9;
     private javax.swing.JTextField tx_nacla;
     private javax.swing.JTextField tx_nivel;
-    private javax.swing.JTextField tx_nivel1;
-    private javax.swing.JTextField tx_nivel10;
-    private javax.swing.JTextField tx_nivel2;
-    private javax.swing.JTextField tx_nivel3;
-    private javax.swing.JTextField tx_nivel4;
-    private javax.swing.JTextField tx_nivel5;
-    private javax.swing.JTextField tx_nivel6;
-    private javax.swing.JTextField tx_nivel7;
-    private javax.swing.JTextField tx_nivel8;
-    private javax.swing.JTextField tx_nivel9;
     private javax.swing.JTextField tx_nombre;
-    private javax.swing.JTextField tx_nombre1;
-    private javax.swing.JTextField tx_nombre10;
-    private javax.swing.JTextField tx_nombre2;
-    private javax.swing.JTextField tx_nombre3;
-    private javax.swing.JTextField tx_nombre4;
-    private javax.swing.JTextField tx_nombre5;
-    private javax.swing.JTextField tx_nombre6;
-    private javax.swing.JTextField tx_nombre7;
-    private javax.swing.JTextField tx_nombre8;
-    private javax.swing.JTextField tx_nombre9;
     private javax.swing.JTextField tx_punta;
     private javax.swing.JTextField tx_tema;
     private javax.swing.JTextField tx_temma;
     private javax.swing.JTextField tx_tuto;
-    private javax.swing.JTextField tx_tuto1;
-    private javax.swing.JTextField tx_tuto10;
-    private javax.swing.JTextField tx_tuto2;
-    private javax.swing.JTextField tx_tuto3;
-    private javax.swing.JTextField tx_tuto4;
-    private javax.swing.JTextField tx_tuto5;
-    private javax.swing.JTextField tx_tuto6;
-    private javax.swing.JTextField tx_tuto7;
-    private javax.swing.JTextField tx_tuto8;
-    private javax.swing.JTextField tx_tuto9;
     private javax.swing.JTextField tx_tutor;
     private javax.swing.JTextField tx_user;
-    private javax.swing.JTextField tx_user1;
-    private javax.swing.JTextField tx_user10;
-    private javax.swing.JTextField tx_user2;
-    private javax.swing.JTextField tx_user3;
-    private javax.swing.JTextField tx_user4;
-    private javax.swing.JTextField tx_user5;
-    private javax.swing.JTextField tx_user6;
-    private javax.swing.JTextField tx_user7;
-    private javax.swing.JTextField tx_user8;
-    private javax.swing.JTextField tx_user9;
     private javax.swing.JTextField tx_useracc;
     // End of variables declaration//GEN-END:variables
     ArrayList<alumnosnorm> estudiante = new ArrayList();
